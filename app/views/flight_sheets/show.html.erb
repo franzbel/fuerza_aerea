@@ -1,0 +1,9 @@
+Placa de la aeronave:
+<%= @flight_sheet.helicopter.plate_number %> <br/>
+Hora de salida:
+<%= @flight_sheet.departure_time %> <br/>
+Hora de llegada:
+<%= @flight_sheet.arrival_time %> <br/>
+<%= link_to 'Lista de hojas de vuelo', flight_sheets_path %> <br/>
+<%= link_to 'Editar', edit_flight_sheet_path(@flight_sheet) %>
+

@@ -1,0 +1,8 @@
+<%= form_for @flight_sheet do |f| %>
+    <%= f.collection_select(:helicopter_id, Helicopter.all, :id, :plate_number) %>
+    <%= f.time_select :departure_time %>
+    <%= f.time_select :arrival_time %>
+    <%= f.submit %>
+<% end %>
+<%= link_to 'Lista de hojas de vuelo', flight_sheets_path %> <br/>
+<%= link_to 'Mostrar', flight_sheet_path(@flight_sheet)  %>

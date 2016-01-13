@@ -1,0 +1,7 @@
+<% @helicopters.each do |helicopter| %>
+    <%= helicopter.plate_number %>
+    <%= link_to 'Editar', edit_helicopter_path(helicopter) %> |
+    <%= link_to 'Mostrar', helicopter_path(helicopter) %> |
+    <%= link_to 'Eliminar', helicopter_path(helicopter),  method: :delete %> <br/>
+<% end %>
+<%= link_to 'Crear Aeronave', new_helicopter_path %>

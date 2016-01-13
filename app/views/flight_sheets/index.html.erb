@@ -1,0 +1,8 @@
+<% @flight_sheets.each do |flight_sheet| %>
+    <%= flight_sheet.departure_time %>
+    <%= flight_sheet.arrival_time %>
+    <%= link_to 'Editar', edit_flight_sheet_path(flight_sheet) %>
+    <%= link_to 'Mostrar', flight_sheet_path(flight_sheet) %>
+    <%= link_to 'Eliminar', flight_sheet_path(flight_sheet), method: :delete %> <br/>
+<% end %>
+<%= link_to 'Nueva hoja de vuelo', new_flight_sheet_path %>

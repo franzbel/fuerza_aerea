@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departure_time: 2016-01-12 16:18:51
+  arrival_time: 2016-01-12 16:18:51
+  helicopter_id: 
+
+two:
+  departure_time: 2016-01-12 16:18:51
+  arrival_time: 2016-01-12 16:18:51
+  helicopter_id: 

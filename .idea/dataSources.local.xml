@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="development" uuid="31135821-ce07-47a7-bbb8-7b7a2ac19e63" />
+    <data-source name="Rails condor: development" uuid="6675b3cd-bbc1-427c-a09d-1d4cfbd962c5" />
+    <data-source name="Rails condor: test" uuid="c19e78c6-b5e8-4408-bac2-f09dda5a0e13" />
+  </component>
+</project>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  helicopter_id: 
+  flight_hours: 2016-01-12 20:14:36
+  supplementary_check_50: false
+  supplementary_check_100: false
+  intermediate_inspection: false
+  periodical_inspection: false
+
+two:
+  helicopter_id: 
+  flight_hours: 2016-01-12 20:14:36
+  supplementary_check_50: false
+  supplementary_check_100: false
+  intermediate_inspection: false
+  periodical_inspection: false
