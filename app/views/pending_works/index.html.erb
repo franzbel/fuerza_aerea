@@ -1,0 +1,18 @@
+<h1>PendingWorks#index</h1>
+<p>Find me in app/views/pending_works/index.html.erb</p>
+<% @components.each do |component| %>
+    Helicoptero:
+    <%= Helicopter.find(System.find(component.system_id).helicopter_id).plate_number %> <br/>
+    Sistema:
+    <%= System.find(component.system_id).title %> <br/>
+    Nombre:
+    <%= component.name %> <br/>
+    Tiempo transcurrido:
+    <%= component.elapsed_time %> <br/>
+    <%= form_for component do |f| %>
+        <%= f.select(:state, [%w(new new),%w(overhauled overhauled)]) %>
+        <%= f.submit %>
+    <% end %>
+    <hr/>
+
+<% end %>

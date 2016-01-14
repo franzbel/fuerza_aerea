@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'pending_works/index'
+
+  get 'pending_works/update_components'
+
   resources :helicopters
   resources :flight_sheets
   resources :reports
+  resources :components
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
