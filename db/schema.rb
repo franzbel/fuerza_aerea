@@ -11,14 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113004257) do
+ActiveRecord::Schema.define(version: 20160114163600) do
+
+  create_table "components", force: :cascade do |t|
+    t.string   "name"
+    t.string   "state",        default: "new"
+    t.time     "elapsed_time", default: '2000-01-01 00:00:00'
+    t.integer  "system_id"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  add_index "components", ["system_id"], name: "index_components_on_system_id"
 
   create_table "flight_sheets", force: :cascade do |t|
-    t.time     "departure_time"
-    t.time     "arrival_time"
+    t.time     "departure_time", default: '2000-01-01 00:00:00'
+    t.time     "arrival_time",   default: '2000-01-01 00:00:00'
     t.integer  "helicopter_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.time     "flight_time"
   end
 
@@ -29,6 +40,15 @@ ActiveRecord::Schema.define(version: 20160113004257) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "parts", force: :cascade do |t|
+    t.string   "part_number"
+    t.integer  "component_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "parts", ["component_id"], name: "index_parts_on_component_id"
 
   create_table "scheduled_inspections", force: :cascade do |t|
     t.integer  "helicopter_id"
@@ -42,5 +62,26 @@ ActiveRecord::Schema.define(version: 20160113004257) do
   end
 
   add_index "scheduled_inspections", ["helicopter_id"], name: "index_scheduled_inspections_on_helicopter_id"
+
+  create_table "systems", force: :cascade do |t|
+    t.integer  "ata_100"
+    t.string   "title"
+    t.integer  "helicopter_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "systems", ["helicopter_id"], name: "index_systems_on_helicopter_id"
+
+  create_table "tbos", force: :cascade do |t|
+    t.integer  "initial_value"
+    t.integer  "end_value"
+    t.string   "unit"
+    t.integer  "component_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "tbos", ["component_id"], name: "index_tbos_on_component_id"
 
 end
