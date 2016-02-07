@@ -5,6 +5,6 @@ class Component < ActiveRecord::Base
   before_update :update_elapsed_time
 
   def update_elapsed_time
-    self.elapsed_time= 0
+    # self.elapsed_time= 0
   end
 end

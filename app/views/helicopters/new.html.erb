@@ -1,6 +1,15 @@
-<%= form_for @helicopter do |f| %>
-    <%= f.text_field :plate_number %>
-    <%= f.submit %>
+<div class="container">
+  <%= form_for @helicopter do |f| %>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :plate_number, 'Numero de placa' %>
+          <%= f.text_field :plate_number, class: 'form-control' %>
+        </div>
+        <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to 'Atras', helicopters_path %>
+</div>
 
-<% end %>
-<%= link_to 'Atras', helicopters_path %>

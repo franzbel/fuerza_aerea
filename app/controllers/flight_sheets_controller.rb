@@ -40,6 +40,6 @@ class FlightSheetsController < ApplicationController
 
   private
   def flight_sheet_params
-    params.require(:flight_sheet).permit(:departure_time, :arrival_time)
+    params.require(:flight_sheet).permit(:departure_time, :arrival_time, :helicopter_id)
   end
 end

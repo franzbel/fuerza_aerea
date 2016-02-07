@@ -1,5 +1,7 @@
-<%= form_for @helicopter do |f| %>
-    <%= f.text_field :plate_number %>
-    <%= f.submit %>
-<% end %>
-<%= link_to 'Lista de aeronaves', helicopters_path %>
+<div class="container">
+  <%= form_for @helicopter do |f| %>
+      <%= f.text_field :plate_number %>
+      <%= f.submit 'Actualizar', class: 'btn btn-primary' %>
+  <% end %>
+  <%= link_to 'Lista de aeronaves', helicopters_path %>
+</div>

@@ -1,8 +1,24 @@
-<%= form_for @flight_sheet do |f| %>
-    <%= f.collection_select(:helicopter_id, Helicopter.all, :id, :plate_number) %>
-    <%= f.time_select :departure_time %>
-    <%= f.time_select :arrival_time %>
-    <%= f.submit %>
-<% end %>
-<%= link_to 'Lista de hojas de vuelo', flight_sheets_path %> <br/>
-<%= link_to 'Mostrar', flight_sheet_path(@flight_sheet)  %>
+<div class="container">
+  <%= form_for @flight_sheet do |f| %>
+      Numero de placa:
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <%= f.collection_select(:helicopter_id, Helicopter.all, :id, :plate_number, {}, {:class=>'form-control'}) %> <br/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :departure_time, 'Hora de salida' %> <br/>
+        <%= f.time_select :departure_time %>
+      </div>
+      <div class="form-group">
+        <%= f.label :arrival_time, 'Hora de llegada' %> <br/>
+        <%= f.time_select :arrival_time %>
+      </div>
+      <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+  <% end %>
+  <%= link_to 'Lista de hojas de vuelo', flight_sheets_path %> <br/>
+  <%= link_to 'Mostrar', flight_sheet_path(@flight_sheet)  %>
+</div>

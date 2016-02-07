@@ -1,7 +1,11 @@
-<% @helicopters.each do |helicopter| %>
-    <%= helicopter.plate_number %>
-    <%= link_to 'Editar', edit_helicopter_path(helicopter) %> |
-    <%= link_to 'Mostrar', helicopter_path(helicopter) %> |
-    <%= link_to 'Eliminar', helicopter_path(helicopter),  method: :delete %> <br/>
-<% end %>
-<%= link_to 'Crear Aeronave', new_helicopter_path %>
+<div class="container">
+  <h2>LISTA DE HELICOPTEROS</h2>
+  <% @helicopters.each do |helicopter| %>
+      <h5><%= helicopter.plate_number %></h5>
+      <%= link_to 'Editar', edit_helicopter_path(helicopter) %> |
+      <%= link_to 'Mostrar', helicopter_path(helicopter) %> |
+      <%= link_to 'Eliminar', helicopter_path(helicopter),  method: :delete %> <br/>
+      <hr/>
+  <% end %>
+  <%= link_to 'Crear Aeronave', new_helicopter_path, class: 'btn btn-primary' %>
+</div>
